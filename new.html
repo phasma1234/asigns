@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Color Changer</title>
+  <style>
+    #colorBox {
+      width: 200px;
+      height: 200px;
+      border: 2px solid #333;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <button id="changeColorBtn">Change Color</button>
+  <div id="colorBox"></div>
+
+  <script>
+    const button = document.getElementById("changeColorBtn");
+    const box = document.getElementById("colorBox");
+
+    // function to generate random hex color
+    function getRandomColor() {
+      const letters = "0123456789ABCDEF";
+      let color = "#"; 
+      for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
+ 
+    button.addEventListener("click", function () {
+      box.style.backgroundColor = getRandomColor();
+    });
+  </script>
+</body>
+</html>
